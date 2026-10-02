@@ -1,0 +1,679 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #e9edef;
+    height: 100vh;
+}
+
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app-container {
+    width: 95%;
+    max-width: 1200px;
+    height: 90vh;
+
+    margin: 5vh auto;
+
+    display: flex;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 300px;
+
+    border-right: 1px solid #ddd;
+
+    background: #f7f7f7;
+}
+
+
+.sidebar-header {
+    height: 75px;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #075e54;
+
+    color: white;
+}
+
+
+.sidebar-header h2 {
+    font-size: 20px;
+}
+
+
+.sidebar-header p {
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+#logoutBtn {
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    background: white;
+
+    color: #075e54;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+    padding: 12px;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 20px;
+
+    outline: none;
+}
+
+
+/* =========================
+   USERS
+========================= */
+
+.users-section {
+    padding: 10px;
+}
+
+
+.users-section h3 {
+    font-size: 14px;
+
+    color: #555;
+
+    margin-bottom: 10px;
+}
+
+
+#usersList {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.user-button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    background: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 15px;
+}
+
+
+.user-button:hover {
+    background: #e0e0e0;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-section {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.chat-header {
+    height: 75px;
+
+    padding: 15px 20px;
+
+    background: #075e54;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.chat-header h3 {
+    font-size: 18px;
+}
+
+
+#onlineStatus {
+    font-size: 12px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   CHAT BOX
+========================= */
+
+.chat-box {
+    flex: 1;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    background: #efeae2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    max-width: 65%;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    word-wrap: break-word;
+
+    font-size: 14px;
+}
+
+
+.message strong {
+    font-size: 12px;
+}
+
+
+.message.sent {
+    align-self: flex-end;
+
+    background: #d9fdd3;
+
+    border-bottom-right-radius: 2px;
+}
+
+
+.message.received {
+    align-self: flex-start;
+
+    background: white;
+
+    border-bottom-left-radius: 2px;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-message {
+    text-align: center;
+
+    margin: auto;
+
+    color: #777;
+}
+
+
+.welcome-message h2 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   TYPING
+========================= */
+
+#typingStatus {
+    height: 20px;
+
+    padding-left: 20px;
+
+    font-size: 12px;
+
+    color: #777;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.chat-input {
+    height: 65px;
+
+    padding: 10px;
+
+    display: flex;
+
+    gap: 10px;
+
+    background: #f0f0f0;
+}
+
+
+.chat-input input {
+    flex: 1;
+
+    padding: 12px 15px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+
+.chat-input button {
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #075e54;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+.chat-input button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .app-container {
+        width: 100%;
+
+        height: 100vh;
+
+        margin: 0;
+
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 35%;
+    }
+
+    .message {
+        max-width: 80%;
+    }
+
+    .sidebar-header h2 {
+        font-size: 15px;
+    }
+
+    #logoutBtn {
+        padding: 5px;
+
+        font-size: 11px;
+    }
+
+}
+
+.message {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.message-text {
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.message-time {
+    position: absolute;
+    right: 8px;
+    bottom: 4px;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+#typingStatus {
+    height: 20px;
+
+    padding-left: 20px;
+
+    font-size: 12px;
+
+    color: #075e54;
+
+    font-style: italic;
+}
+
+.message-status {
+    margin-left: 5px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.user-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.user-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.unread-count {
+    min-width: 22px;
+
+    height: 22px;
+
+    padding: 0 6px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+/* =========================
+   PROFILE MINI
+========================= */
+
+.profile-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.profile-mini h2 {
+    margin: 0;
+}
+
+.profile-mini p {
+    margin: 3px 0 0;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   PROFILE AVATAR
+========================= */
+
+.profile-avatar {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   PROFILE BUTTON
+========================= */
+
+.profile-button {
+
+    width: calc(100% - 20px);
+
+    margin: 10px;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f0f2f5;
+
+    color: #075e54;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+.profile-button:hover {
+
+    background: #e4e6e8;
+
+}
+
+
+/* =========================
+   PROFILE MODAL
+========================= */
+
+.profile-modal {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card {
+
+    width: 350px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   LARGE AVATAR
+========================= */
+
+.large-avatar {
+
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #075e54;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 45px;
+}
+
+
+/* =========================
+   PROFILE TEXT
+========================= */
+
+.profile-card h2 {
+
+    color: #075e54;
+
+    margin-bottom: 8px;
+}
+
+.profile-card p {
+
+    color: #667781;
+
+    margin: 8px 0;
+}
+
+.profile-status {
+
+    color: #25d366 !important;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-profile {
+
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+.close-profile:hover {
+
+    color: #000;
+}
